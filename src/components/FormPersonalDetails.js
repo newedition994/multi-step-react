@@ -22,7 +22,8 @@ export class FormPersonalDetails extends Component {
 
         return (
             <MuiThemeProvider>
-                <AppBar title="">
+                <React.Fragment>
+                    <AppBar title="Personal Details" />
                     <TextField hintText="Enter Your Occupation"
                         floatingLabelText="Occupation"
                         onChange={handleChange('occupation')}
@@ -41,8 +42,19 @@ export class FormPersonalDetails extends Component {
                         defaultValue={values.bio}
                     />
                     <br />
-                    <RaisedButton />
-                </AppBar>
+                    <RaisedButton
+                        label="Continue"
+                        primary={true}
+                        style={StyleSheet.button}
+                        onClick={this.continue}
+                    />
+                    <RaisedButton
+                        label="Back"
+                        primary={false}
+                        style={StyleSheet.button}
+                        onClick={this.back}
+                    />
+                </React.Fragment>
             </MuiThemeProvider>
         )
     }
