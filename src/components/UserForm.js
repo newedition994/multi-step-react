@@ -13,6 +13,25 @@ export class UserForm extends Component {
     }
 
     // Proceed to next step
+    nextStep = () => {
+        const { step } = this.state;
+        this.setState({
+            step: step + 1
+        });
+    }
+
+    // Go back a step
+    prevStep = () => {
+        const { step } = this.state;
+        this.setState({
+            step: step - 1
+        });
+    }
+
+    // Handle User Input
+    handleChange = input => e => {
+        this.setState({ [input]: e.target.value });
+    }
 
 
     render() {
